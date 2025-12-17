@@ -8,7 +8,7 @@ import './MasInfoComunidad.css';
 
 // Importamos las imágenes por defecto y el icono de verificado
 import ComunidadDefecto from '../../Recursos/comunidadDefecto.png';
-import PerfilDefecto from '../../Recursos/perfilDefecto.png';
+import { URL_FOTO, CLOUD_URL_DEFAULT } from "../../config.js";
 
 const MasInfoComunidad = () => {
     const location = useLocation();
@@ -549,7 +549,9 @@ const manejarCrearPublicacion = async () => {
                                     <li key={miembro.idUsuario} className={`miembro-item ${isVetado ? 'vetado-item' : ''}`}>
                                         <div className="d-flex align-items-center gap-2 flex-grow-1">
                                             <img 
-                                                src={miembro.rutaFoto || PerfilDefecto} 
+                                                src={miembro.rutaImagen && miembro.rutaImagen !== "null"
+                                                    ? `${URL_FOTO}${miembro.rutaImagen}`
+                                                    : CLOUD_URL_DEFAULT}
                                                 alt="avatar" 
                                                 className="miembro-avatar"
                                             />

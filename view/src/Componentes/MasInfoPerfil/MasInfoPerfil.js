@@ -176,8 +176,8 @@ const MasInfoPerfil = () => {
                     )}
                 </h1>
                 <img
-                    src={artista.fotoAmazon && artista.fotoAmazon !== "null"
-                        ? `${URL_FOTO}${artista.fotoAmazon}`
+                    src={artista.rutafoto && artista.rutafoto !== "null"
+                        ? `${URL_FOTO}${artista.rutafoto}`
                         : CLOUD_URL_DEFAULT}
                     alt="Foto del artista"
                     className="card-img-top card-img-circle"
