@@ -222,10 +222,12 @@ const MasInfoPerfil = () => {
                                     {elem.esalbum && expandido[elem.id] && (
                                         <div className="canciones">
                                             {cancionesAlbum[elem.id]?.map((can, index) => (
-                                                <div key={can.idelemento} className="cardCancion">
+                                                <div key={can.id} className="cardCancion">
                                                     <span>{index + 1}. {can.nombre}</span>
                                                     <div>
-                                                        <button className="verMasCanc" onClick={() => { verMasElemento(elementosCreados.find(elem => elem.id === can.idelemento), 2); }}>Ver más</button>
+                                                        {console.log("Canción en álbum:", can)}
+                                                        
+                                                        <button className="verMasCanc" onClick={() => { verMasElemento(can, 2); }}>Ver más</button>
                                                     </div>
                                                 </div>
                                             ))}
